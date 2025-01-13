@@ -28,29 +28,4 @@ service InteractionService {
     // Optional: Languages for value help or localization
     @readonly
     entity Languages as projection on sap.common.Languages;
-
-    // Actions for managing inbound deliveries
-    action addInboundDelivery(
-        DeliveryID: String(6),
-        productID: String(5),
-        PurchaseOrderID: String(70),
-        destinationWarehouseID: String(70),
-        destinationBinID: String(5),
-        expectedQuantity: Integer,
-        EstimatedDeliveryDate: DateTime,
-        statusID: String(10),
-        comment: String(500)
-    ) returns String;
-
-    action deleteInboundDelivery(
-        DeliveryID: String(6)
-    ) returns String;
-
-    action modifyInboundDelivery(
-        DeliveryID: String(6),
-        expectedQuantity: Integer,
-        EstimatedDeliveryDate: DateTime,
-        statusID: String(10),
-        comment: String(500)
-    ) returns String;
 }
